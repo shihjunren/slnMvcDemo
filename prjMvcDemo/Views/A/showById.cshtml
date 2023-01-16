@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "showById";
+    string photo = "anonymous.jpg";
+    if (ViewBag.KK != null)
+    {
+        photo = ViewBag.KK.fId + ".jpg";
+    }
+}
+
+<h2>客戶資料查詢作業</h2>
+<img src="~/Images/@photo" width="250" height="180" />
+@{
+    if (ViewBag.KK != null)
+    {
+        <h1>@ViewBag.KK.fName</h1>
+        @ViewBag.KK.fPhone
+
+    }
+    else
+    {
+        @:查無任何資料
+    }
+
+}
